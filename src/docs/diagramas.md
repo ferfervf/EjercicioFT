@@ -36,7 +36,7 @@ class CacheCostos {
 +caminoMinimo(idA,idB)
 }
 
-#Controllers
+#Controllers#
 class PuntoVentaController {
 +getAll()
 +create(req)
@@ -58,7 +58,7 @@ class AcreditacionController {
 +listar()
 }
 
-#Services
+#Services#
 
 #Repository
 class AcreditacionRepository {
@@ -68,7 +68,7 @@ class AcreditacionRepository {
 }
 
 
-##DIAGRAMA BBDD
+##DIAGRAMA BBDD##
 erDiagram
     ACREDITACIONES {
         BIGINT id PK
