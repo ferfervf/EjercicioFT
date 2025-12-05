@@ -45,6 +45,7 @@ class PuntoVentaController {
 }
 
 ```mermaid
+classDiagram
 class CostosController {
 +add(req)
 +delete(idA,idB)
@@ -71,6 +72,7 @@ class AcreditacionRepository {
 ```mermaid
 
 ##DIAGRAMA BBDD##
+
 erDiagram
     ACREDITACIONES {
         BIGINT id PK
