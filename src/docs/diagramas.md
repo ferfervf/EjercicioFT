@@ -85,4 +85,24 @@ erDiagram
         VARCHAR nombrePuntoVenta
         TIMESTAMP fechaRecepcion
     }
+    
+    %% ======= CONEXIONES =======
+PuntoVentaController --> CachePuntosVenta : usa
+CostosController --> CacheCostos : usa
+AcreditacionController --> CachePuntosVenta : valida PV
+AcreditacionController --> AcreditacionRepository : guarda en BD
+
+CachePuntosVenta --> PuntoVenta : contiene
+AcreditacionRepository --> Acreditacion : persiste
+CacheCostos --> Camino : genera camino mínimo
+
+%% ======= CONEXIONES =======
+PuntoVentaController --> CachePuntosVenta : usa
+CostosController --> CacheCostos : usa
+AcreditacionController --> CachePuntosVenta : valida PV
+AcreditacionController --> AcreditacionRepository : guarda en BD
+
+CachePuntosVenta --> PuntoVenta : contiene
+AcreditacionRepository --> Acreditacion : persiste
+CacheCostos --> Camino : genera camino mínimo
 ```
