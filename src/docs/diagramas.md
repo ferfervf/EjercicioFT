@@ -35,7 +35,7 @@ class CacheCostos {
 +vecinos(idA)
 +caminoMinimo(idA,idB)
 }
-
+```
 #Controllers#
 class PuntoVentaController {
 +getAll()
@@ -44,7 +44,7 @@ class PuntoVentaController {
 +delete(id)
 }
 
-
+```mermaid
 class CostosController {
 +add(req)
 +delete(idA,idB)
@@ -57,16 +57,18 @@ class AcreditacionController {
 +crear(req)
 +listar()
 }
-
+```markdown
 #Services#
 
 #Repository
+```mermaid
 class AcreditacionRepository {
 <<interface>>
 +save(a)
 +findAll()
 }
-
+```
+```mermaid
 
 ##DIAGRAMA BBDD##
 erDiagram
