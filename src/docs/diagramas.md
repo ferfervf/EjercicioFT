@@ -1,27 +1,36 @@
-classdiagram
-Class PointOfSale {
-+int id
-+String name
+```mermaid
+classDiagram
+
+
+class PuntoVenta {
++Integer id
++String nombre
 }
 
-    class PuntoDeVentaService {
-        +List<PuntoDeVenta> getAll()
-        +PuntoDeVenta add(PuntoDeVenta p)
-        +PuntoDeVenta update(int id, PuntoDeVenta p)
-        +void delete(int id)
-    }
 
-class Cost{
-
-int IdA
-int IdB
-double Cost
-
-}
-class Acreditaciones {
-+int importe
-+int  idPuntoDeVenta
-+date  fechaPedido
-+String nombrePuntoVenta}
+class Acreditacion {
++Long id
++BigDecimal importe
++Integer idPuntoVenta
++String nombrePuntoVenta
++LocalDateTime fechaRecepcion
 }
 
+
+class CachePuntosVenta {
+-ConcurrentHashMap<Integer,PuntoVenta> cache
++getAll()
++get(id)
++add(pv)
++update(id,pv)
++delete(id)
+}
+
+
+class CacheCostos {
+-ConcurrentHashMap<Integer, ConcurrentHashMap<Integer,Integer>> costos
++addCosto(idA,idB,costo)
++removeCosto(idA,idB)
++vecinos(idA)
++caminoMinimo(idA,idB)
+}
