@@ -35,3 +35,45 @@ class CacheCostos {
 +vecinos(idA)
 +caminoMinimo(idA,idB)
 }
+
+#Controllers
+class PuntoVentaController {
++getAll()
++create(req)
++update(id,req)
++delete(id)
+}
+
+
+class CostosController {
++add(req)
++delete(idA,idB)
++vecinos(id)
++caminoMinimo(idA,idB)
+}
+
+
+class AcreditacionController {
++crear(req)
++listar()
+}
+
+#Services
+
+#Repository
+class AcreditacionRepository {
+<<interface>>
++save(a)
++findAll()
+}
+
+
+##DIAGRAMA BBDD
+erDiagram
+    ACREDITACIONES {
+        BIGINT id PK
+        DECIMAL importe
+        INT idPuntoVenta
+        VARCHAR nombrePuntoVenta
+        TIMESTAMP fechaRecepcion
+    }
