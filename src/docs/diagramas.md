@@ -1,80 +1,82 @@
-#DIAGRAMAS
+# DIAGRAMAS
+
 ```mermaid
 classDiagram
-
 
 class PuntoVenta {
-+Integer id
-+String nombre
+  +Integer id
+  +String nombre
 }
-
 
 class Acreditacion {
-+Long id
-+BigDecimal importe
-+Integer idPuntoVenta
-+String nombrePuntoVenta
-+LocalDateTime fechaRecepcion
+  +Long id
+  +BigDecimal importe
+  +Integer idPuntoVenta
+  +String nombrePuntoVenta
+  +LocalDateTime fechaRecepcion
 }
-
 
 class CachePuntosVenta {
--ConcurrentHashMap<Integer,PuntoVenta> cache
-+getAll()
-+get(id)
-+add(pv)
-+update(id,pv)
-+delete(id)
+  -ConcurrentHashMap<Integer,PuntoVenta> cache
+  +getAll()
+  +get(id)
+  +add(pv)
+  +update(id,pv)
+  +delete(id)
 }
-
 
 class CacheCostos {
--ConcurrentHashMap<Integer, ConcurrentHashMap<Integer,Integer>> costos
-+addCosto(idA,idB,costo)
-+removeCosto(idA,idB)
-+vecinos(idA)
-+caminoMinimo(idA,idB)
+  -ConcurrentHashMap<Integer, ConcurrentHashMap<Integer,Integer>> costos
+  +addCosto(idA,idB,costo)
+  +removeCosto(idA,idB)
+  +vecinos(idA)
+  +caminoMinimo(idA,idB)
 }
 ```
+
+# Controllers
+
 ```mermaid
 classDiagram
-#Controllers#
+
 class PuntoVentaController {
-+getAll()
-+create(req)
-+update(id,req)
-+delete(id)
+  +getAll()
+  +create(req)
+  +update(id,req)
+  +delete(id)
 }
 
-
-classDiagram
 class CostosController {
-+add(req)
-+delete(idA,idB)
-+vecinos(id)
-+caminoMinimo(idA,idB)
+  +add(req)
+  +delete(idA,idB)
+  +vecinos(id)
+  +caminoMinimo(idA,idB)
 }
-
 
 class AcreditacionController {
-+crear(req)
-+listar()
-}
-```markdown
-#Services#
-
-#Repository
-```mermaid
-class AcreditacionRepository {
-<<interface>>
-+save(a)
-+findAll()
+  +crear(req)
+  +listar()
 }
 ```
+
+# Services
+(Si querés agregar servicios, acá ponés otro bloque mermaid)
+
+# Repository
+
 ```mermaid
+classDiagram
 
-##DIAGRAMA BBDD##
+class AcreditacionRepository {
+  <<interface>>
+  +save(a)
+  +findAll()
+}
+```
 
+# DIAGRAMA BBDD
+
+```mermaid
 erDiagram
     ACREDITACIONES {
         BIGINT id PK
@@ -83,3 +85,4 @@ erDiagram
         VARCHAR nombrePuntoVenta
         TIMESTAMP fechaRecepcion
     }
+```
