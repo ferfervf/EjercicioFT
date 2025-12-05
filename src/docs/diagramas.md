@@ -36,6 +36,8 @@ class CacheCostos {
 +caminoMinimo(idA,idB)
 }
 ```
+```mermaid
+classDiagram
 #Controllers#
 class PuntoVentaController {
 +getAll()
@@ -44,7 +46,7 @@ class PuntoVentaController {
 +delete(id)
 }
 
-```mermaid
+
 classDiagram
 class CostosController {
 +add(req)
